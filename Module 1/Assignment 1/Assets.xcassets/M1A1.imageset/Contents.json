@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "cape-may-in-the-fall-fb.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "cape-may-in-the-fall-fb@2x.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "cape-may-in-the-fall-fb@3x.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
