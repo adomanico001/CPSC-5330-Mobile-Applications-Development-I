@@ -1,0 +1,29 @@
+// CPSC 5330 - Module 2 Assignment 2
+// @author - Addie Domanico
+// @version 10/27/2024
+
+import Foundation
+
+// Define payment function
+func Payment(loanAmount: Int, numberOfPayments: Int, interestRatePerPeriod: Float) -> Float {
+    // Convert interest rate from percent to decimal
+    let r = interestRatePerPeriod / 100.0
+    
+    // Loan amount as a float for accurate calculations
+    let P = Float(loanAmount)
+    
+    // Calculate mortgage payment using formula M = P[r(1+r)^n / (1+r)^n - 1]
+    let numerator = r * pow(1 + r, Float(numberOfPayments))
+    let denominator = pow(1 + r, Float(numberOfPayments)) - 1
+    let payment = P * (numerator / denominator)
+    
+    return payment    
+}
+
+// 2-month loan of $20,000 at 4.4% APR, compounded monthly
+let loan1 = Payment(loanAmount: 20000, numberOfPayments: 2, interestRatePerPeriod: 4.4 / 12)
+print(String(format: "Payment for 2-month loan payment of $20,000, 4.4%% APR, compounded monthly: $%.2f", loan1))
+
+// 30-year loan of $150,000 at 5% APR, with one annual payment each year
+let loan2 = Payment(loanAmount: 150000, numberOfPayments: 30, interestRatePerPeriod: 5.0)
+print(String(format: "Payment for 30-year loan payment of $150,000, 5%% APR, with one annual payment each year: $%.2f", loan2))
